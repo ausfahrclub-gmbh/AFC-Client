@@ -55,6 +55,9 @@ function registerShortcuts() {
     globalShortcut.register('=',() => { 
         mainWindow.webContents.send('trigger', 999);
     });
+    globalShortcut.register('?',() => { 
+        mainWindow.webContents.send('trigger', 998);
+    });
 
     // this stops the alarm
     globalShortcut.register('F10',() => { 
