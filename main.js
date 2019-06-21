@@ -49,18 +49,60 @@ function registerShortcuts() {
     globalShortcut.register('F9',() => { 
         mainWindow.webContents.send('trigger', 74);
     });
-    globalShortcut.register('F8',() => { 
+    globalShortcut.register('F8',() => {
         mainWindow.webContents.send('trigger', 88);
     });
+
+    
+    globalShortcut.register('Shift+F4',() => { 
+        mainWindow.webContents.send('trigger', 0);
+    });
+    
+    globalShortcut.register('Shift+F6',() => { 
+        mainWindow.webContents.send('trigger', 75);
+        
+    });
+    globalShortcut.register('Shift+F9',() => { 
+        mainWindow.webContents.send('trigger', 74);
+    });
+    globalShortcut.register('Shift+F8',() => {
+        mainWindow.webContents.send('trigger', 88);
+    });
+    //Shortcut Plus
     globalShortcut.register('=',() => { 
         mainWindow.webContents.send('trigger', 999);
     });
+    globalShortcut.register('Shift+=',() => { 
+        mainWindow.webContents.send('trigger', 999);
+    });
+    //Shortcut Shift+Hashtag
     globalShortcut.register('?',() => { 
         mainWindow.webContents.send('trigger', 998);
+    });
+    globalShortcut.register('Shift+?',() => { 
+        mainWindow.webContents.send('trigger', 998);
+    });
+        
+       //Shorcut ü 
+   
+    globalShortcut.register(';',() => { 
+        mainWindow.webContents.send('trigger', 997);
+    });
+    globalShortcut.register('Shift+;',() => { 
+        mainWindow.webContents.send('trigger', 997);
+    });
+    globalShortcut.register('-',() => { 
+        mainWindow.webContents.send('trigger', 996);
+    });
+    globalShortcut.register('Shift+-',() => { 
+        mainWindow.webContents.send('trigger', 996);
     });
 
     // this stops the alarm
     globalShortcut.register('F10',() => { 
+        mainWindow.webContents.send('trigger', 'holdup');
+    });
+    globalShortcut.register('Shift+F10',() => { 
         mainWindow.webContents.send('trigger', 'holdup');
     });
     // this stops the alarm
@@ -68,6 +110,9 @@ function registerShortcuts() {
 
     // this is a secret alarm
     globalShortcut.register('F7',() => { 
+        mainWindow.webContents.send('trigger', 73);
+    });
+    globalShortcut.register('Shift+F7',() => { 
         mainWindow.webContents.send('trigger', 73);
     });
     // this is a secret alarm
@@ -98,5 +143,33 @@ function registerShortcuts() {
     globalShortcut.register('Alt+,',() => { 
         mainWindow.webContents.send('trigger', 8);
     });
+
+
+
+    globalShortcut.register('Shift+Alt+y',() => { 
+        mainWindow.webContents.send('trigger', 1);
+    });
+    globalShortcut.register('Shift+Alt+x',() => { 
+        mainWindow.webContents.send('trigger', 2);
+    });
+    globalShortcut.register('Shift+Alt+c',() => { 
+        mainWindow.webContents.send('trigger', 3);
+    });
+    globalShortcut.register('Shift+Alt+v',() => { 
+        mainWindow.webContents.send('trigger', 4);
+    });
+    globalShortcut.register('Shift+Alt+b',() => { 
+        mainWindow.webContents.send('trigger', 5);
+    });
+    globalShortcut.register('Shift+Alt+n',() => { 
+        mainWindow.webContents.send('trigger', 6);
+    });
+    globalShortcut.register('Shift+Alt+m',() => { 
+        mainWindow.webContents.send('trigger', 7);
+    });
+    globalShortcut.register('Shift+Alt+,',() => { 
+        mainWindow.webContents.send('trigger', 8);
+    });
+
 
 }
