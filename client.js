@@ -8,7 +8,7 @@ var sound;
 
 
 //var ipadress = 'http://localhost:9000';
-var ipadress = 'http://25.66.153.178:9000';
+var ipadress = 'http://167.86.92.200:9000';
 
 ipcRenderer.on('trigger', (e, level) => {
    socket.emit('alarm', {
