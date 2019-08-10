@@ -5,9 +5,9 @@ const path = require('path');
 const {app, BrowserWindow, globalShortcut} = electron;
 
 
-require('electron-reload')(__dirname, {
-    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-});
+// require('electron-reload')(__dirname, {
+//     electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+// });
 
 
 let mainWindow;
@@ -123,14 +123,14 @@ function registerShortcuts() {
     // this stops the alarm
 
 
-    // this is a secret alarm
+
     globalShortcut.register('F7',() => { 
         mainWindow.webContents.send('trigger', 73);
     });
     globalShortcut.register('Shift+F7',() => { 
         mainWindow.webContents.send('trigger', 73);
     });
-    // this is a secret alarm
+
 
 
     //Other alam levels
