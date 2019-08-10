@@ -122,6 +122,14 @@ function registerShortcuts() {
     });
     // this stops the alarm
 
+    // this starts and stops the shoptimer
+    globalShortcut.register('F11',() => { 
+        mainWindow.webContents.send('trigger', 'shop');
+    });
+    globalShortcut.register('Shift+F11',() => { 
+        mainWindow.webContents.send('trigger', 'shop');
+    });
+    // this starts and stops the shoptimer
 
 
     globalShortcut.register('F7',() => { 

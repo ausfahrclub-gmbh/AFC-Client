@@ -37,8 +37,9 @@ window.onload = function () {
       btn = document.getElementById('send'),
       output = document.getElementById('output'),
       feedback = document.getElementById('feedback'),
-      status = document.getElementById('status')
-      alarmlog = document.getElementById('Alarmlog');
+      status = document.getElementById('status'),
+      alarmlog = document.getElementById('Alarmlog'),
+      timerstatus = document.getElementById('shopstatus');
 
    document.getElementById('adress').innerHTML = '(' + ipadress + ')';
    socket = io.connect(ipadress);
@@ -53,6 +54,7 @@ window.onload = function () {
        status.style.color = "red"
        status.innerHTML = "DISCONNECTED"
     });
+
 
    
 
@@ -116,6 +118,23 @@ window.onload = function () {
       if(type == 'alarm_stop'){
          console.log(` ${id} Stopped playing ${level} alarm`);
          alarmlog.innerHTML += '<p style="color: red">' + `${timestamp()} - ${id} hat Alarm ${level} gestoppt` + '</p>';
+      }
+
+      else if(type == 'shop'){
+         
+         if(data.status == 'active'){
+            timerstatus.innerHTML = 'Active';
+            timerstatus.style.color = "green"
+            sound = playSound(level);
+         }
+         else if (data.status == 'disabled') {
+            timerstatus.innerHTML = 'Inactive';
+            timerstatus.style.color = "red"
+         }else{
+            sound = playSound(level);
+         }
+
+         
       }
 
       // Alarm received   -NV
