@@ -1,9 +1,10 @@
 # AFC-Website
 <b> this really be a bruh moment </b>
+## Releases:
+https://github.com/ausfahrclub-gmbh/AFC-Client/release
 
 # AFC-Alarm
-## System architecture - Alarm
-
+## System architecture - Alarms
 <img src="Images/AlarmArchitecture.png" />
 
 ### Server
