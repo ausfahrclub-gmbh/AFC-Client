@@ -16,13 +16,24 @@ let mainWindow;
 app.on('ready', function(){
 
     //Create new window
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        width: 1400,
+        height: 800,
+        webPreferences: {
+            nodeIntegration: true, // enable nodeIntegration 
+            preload: path.join(__dirname, 'preload.js')
+        }
+    });
+
     //Load html into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
         protocol:'file:',
         slashes: true
     }));
+
+      // Open the DevTools.
+     mainWindow.webContents.openDevTools()
 
     mainWindow.on('closed', function() {
         app.quit();

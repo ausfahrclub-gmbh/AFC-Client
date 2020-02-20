@@ -1,14 +1,12 @@
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
-
 var socket;
 var sound;
 
 
-
 //var ipadress = 'http://localhost:9000';
-var ipadress = 'http://167.86.92.200:9000';
+var ipadress = 'http://patrickwa.ddns.net:9000';
 
 ipcRenderer.on('trigger', (e, level) => {
    socket.emit('alarm', {
